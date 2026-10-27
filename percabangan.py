@@ -1,25 +1,31 @@
 # variabel dan tipe data
-nama_mhs = "azmi" 
-kelas = "c1"
+nama_mhs = input("Masukkan Nama Mahasiswa: ")
 
-nalgoritma = 90
-nagama = 90
-nbasisdata = 90
+# input nilai mata kuliah
+algoritma = int(input("Masukkan Nilai Algoritma: "))
+basisdata = int(input("Masukkan Nilai Basis Data: "))
+pengantarteknologi = int(input("Masukkan Nilai Pengantar Teknologi: "))
+inggris = int(input("Masukkan Nilai Bahasa Inggris: "))
+pancasila = int(input("Masukkan Nilai Pancasila: "))
+agama = int(input("Masukkan Nilai Agama: "))
+logikainformatika = int(input("Masukkan Nilai Logika Informatika: "))
 
-# rata_rata = (nagoritma + nagama + nbaisdata) / 3
-# print(rata_rata)
-nilai = int(input("Masukkan Nilai:"))
+# menghitung rata-rata
+rata_rata = (algoritma + basisdata + pengantarteknologi + inggris + pancasila + agama +logikainformatika) / 7
 
-# penentuan lulus atau tidak
-if nilai >=80 and nilai <=100:
-   # kondidi jika terpenuhi
-   # maka
-   print("Nilai : A")
-elif nilai >=70 and nilai <80:
-   print("Nilai : B")
-elif nilai >=50 and nilai <=70:
-   print("Nilai : C")
+# menampilkan data mahasiswa
+print("Nama Mahasiswa:", nama_mhs)
+
+# penentuan nilai huruf
+if rata_rata >= 80 and rata_rata <= 100:
+    print("Nilai: A")
+elif rata_rata >= 70 and rata_rata < 80:
+    print("Nilai: B")
+elif rata_rata >= 60 and rata_rata < 70:
+    print("Nilai: C")
+elif rata_rata >= 50 and rata_rata < 60:
+    print("Nilai: D")
+elif rata_rata >= 0 and rata_rata < 50:
+    print("Nilai: E")
 else:
-    # cukup menampilkan hasil
-    # maka
-    print("Nilai lebih dari 100 atau di bawah 50")
+    print("Nilai tidak valid")
