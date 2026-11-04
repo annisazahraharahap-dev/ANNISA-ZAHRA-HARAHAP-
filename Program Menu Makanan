@@ -1,0 +1,156 @@
+# ==========================================
+#       PROGRAM KASIR RESTORAN
+# ==========================================
+
+print("==========================================")
+print("       SELAMAT DATANG DI RESTORAN")
+print("==========================================")
+
+# Inisialisasi variabel
+total_belanja = 0
+diskon = 0
+total_bayar = 0
+
+# Perulangan untuk pemesanan menu
+while True:
+
+    # Menampilkan daftar menu
+    print("\n==========================================")
+    print("             MENU MAKANAN")
+    print("==========================================")
+
+    print("1. Nasi Goreng  - Rp25.000")
+    print("2. Mie Ayam     - Rp15.000")
+    print("3. Ayam Geprek  - Rp20.000")
+    print("4. Sate Ayam    - Rp30.000")
+    print("5. Bakso        - Rp18.000")
+    print("0. Selesai Memilih")
+
+    # Input pilihan menu
+    pilihan = int(input("\nMasukkan pilihan menu: "))
+
+    # Percabangan menu
+    if pilihan == 0:
+        break
+
+    elif pilihan == 1:
+        nama_menu = "Nasi Goreng"
+        harga = 25000
+
+    elif pilihan == 2:
+        nama_menu = "Mie Ayam"
+        harga = 15000
+
+    elif pilihan == 3:
+        nama_menu = "Ayam Geprek"
+        harga = 20000
+
+    elif pilihan == 4:
+        nama_menu = "Sate Ayam"
+        harga = 30000
+
+    elif pilihan == 5:
+        nama_menu = "Bakso"
+        harga = 18000
+
+    else:
+        print("Pilihan menu tidak tersedia!")
+        continue
+
+    # Input jumlah pesanan
+    jumlah = int(input("Masukkan jumlah pesanan: "))
+
+    # Validasi jumlah pesanan
+    if jumlah <= 0:
+        print("Jumlah pesanan harus lebih dari 0!")
+        continue
+
+    # Menghitung subtotal
+    subtotal = harga * jumlah
+
+    # Menambahkan subtotal ke total belanja
+    total_belanja += subtotal
+
+    # Menampilkan hasil pesanan
+    print("\n------------------------------------------")
+    print("Menu       :", nama_menu)
+    print("Harga      : Rp", harga)
+    print("Jumlah     :", jumlah)
+    print("Subtotal   : Rp", subtotal)
+    print("------------------------------------------")
+
+    print("Pesanan berhasil ditambahkan!")
+
+# ==========================================
+#           PERHITUNGAN DISKON
+# ==========================================
+
+print("\n==========================================")
+print("             RINCIAN BELANJA")
+print("==========================================")
+
+print("Total Belanja : Rp", total_belanja)
+
+# Percabangan diskon
+if total_belanja > 200000:
+    diskon = total_belanja * 20 / 100
+else:
+    diskon = 0
+
+# Menghitung total pembayaran
+total_bayar = total_belanja - diskon
+
+# ==========================================
+#           STRUK PEMBAYARAN
+# ==========================================
+
+print("\n==========================================")
+print("            STRUK PEMBAYARAN")
+print("==========================================")
+
+print("Total Belanja : Rp", total_belanja)
+
+if diskon > 0:
+    print("Diskon 20%    : Rp", int(diskon))
+else:
+    print("Diskon 0%     : Rp", int(diskon))
+
+print("------------------------------------------")
+print("Total Bayar   : Rp", int(total_bayar))
+print("==========================================")
+
+# ==========================================
+#           PROSES PEMBAYARAN
+# ==========================================
+
+while True:
+
+    # Input pembayaran
+    uang_bayar = int(input("Masukkan uang pembayaran: Rp "))
+
+    # Percabangan pembayaran
+    if uang_bayar >= total_bayar:
+
+        kembalian = uang_bayar - total_bayar
+
+        print("\n==========================================")
+        print("          PEMBAYARAN BERHASIL")
+        print("==========================================")
+        print("Uang Bayar    : Rp", uang_bayar)
+        print("Total Bayar   : Rp", int(total_bayar))
+        print("Kembalian     : Rp", int(kembalian))
+        print("==========================================")
+        print("       TERIMA KASIH SUDAH BERKUNJUNG")
+        print("==========================================")
+
+        break
+
+    else:
+
+        kekurangan = total_bayar - uang_bayar
+
+        print("\nUang pembayaran tidak mencukupi!")
+        print("Kekurangan    : Rp", int(kekurangan))
+        print("Silakan masukkan pembayaran kembali.")
+
+print("\nProgram selesai.")
